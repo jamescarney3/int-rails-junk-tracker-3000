@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_23_220847) do
+ActiveRecord::Schema.define(version: 2021_04_23_221521) do
 
   create_table "coupes", force: :cascade do |t|
     t.integer "doors"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 2021_04_23_220847) do
   create_table "minivans", force: :cascade do |t|
     t.integer "doors"
     t.json "door_configuration"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "motorcycles", force: :cascade do |t|
+    t.string "seat_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
