@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2021_04_22_200639) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "mileage"
     t.string "registration_id"
-    t.string "vehicle_type"
     t.integer "wheels"
+    t.string "engine_status"
   end
 
 end
