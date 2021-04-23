@@ -23,6 +23,10 @@ class VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(vehicle_params)
 
+    # give the new vehicle an ID
+    registration_id = VehicleRegistrationService.register_vehicle @vehicle
+    @vehicle.registration_id = registration_id
+
     respond_to do |format|
       if @vehicle.save
         format.html { redirect_to @vehicle, notice: "Vehicle was successfully created." }
@@ -64,6 +68,6 @@ class VehiclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vehicle_params
-      params.require(:vehicle).permit(:nickname)
+      params.require(:vehicle).permit(:nickname, :mileage, :wheels, :engine_status)
     end
 end
