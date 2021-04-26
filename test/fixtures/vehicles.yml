@@ -2,6 +2,8 @@
 
 one:
   nickname: MyString
+  details: one (Sedan)
 
 two:
   nickname: MyString
+  details: one (Sedan)

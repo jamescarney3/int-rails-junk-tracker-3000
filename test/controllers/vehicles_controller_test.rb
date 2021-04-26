@@ -17,7 +17,7 @@ class VehiclesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create vehicle" do
     assert_difference('Vehicle.count') do
-      post vehicles_url, params: { vehicle: { nickname: @vehicle.nickname } }
+      post vehicles_url, params: { vehicle: { nickname: @vehicle.nickname, vehicle_type: 'sedan' } }
     end
 
     assert_redirected_to vehicle_url(Vehicle.last)
